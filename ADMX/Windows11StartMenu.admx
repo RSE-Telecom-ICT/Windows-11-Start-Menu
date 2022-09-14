@@ -32,6 +32,17 @@
         <decimal value="1"/>
       </disabledValue>
     </policy>
+
+    <policy name="Windows11StartMenuDisableWidgets" class="User" displayName="$(string.Windows11StartMenuDisableWidgets)" explainText="$(string.Windows11StartMenuDisableWidgets_Help)" key="Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced"  presentation="$(presentation.Windows11StartMenuDisableWidgets)" valueName="TaskbarDa">
+      <parentCategory ref="CtRSEWindows11StartMenu"/>
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_NOSERVER"/>
+      <enabledValue>
+        <decimal value="0"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1"/>
+      </disabledValue>
+    </policy>
 	
 	 <policy name="Windows11StartMenuAlignment" class="User" displayName="$(string.Windows11StartMenuAlignment)" explainText="$(string.Windows11StartMenuAlignment_Help)" presentation="$(presentation.Windows11StartMenuAlignment)" key="Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced">
       <parentCategory ref="CtRSEWindows11StartMenu" />
