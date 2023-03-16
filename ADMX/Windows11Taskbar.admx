@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  Copyright (C) RSE Telecom & ICT. All rights reserved.  -->
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0"
+  xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <policyNamespaces>
+    <target prefix="RSEWindows11Taskbar" namespace="RseTelecom.Windows11Taskbar" />
+    <using prefix="mycompany" namespace="RseTelecom.Policies.Common" />
+    <using prefix="windows" namespace="Microsoft.Policies.Windows" />
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0" />
+  <categories>
+    <category name="CtRSEWindows11Taskbar" displayName="$(string.CtRSEWindows11Taskbar)">
+      <parentCategory ref="mycompany:CtRseTelecom" />
+    </category>
+  </categories>
+  <policies>
+
+
+    <policy name="Windows11TaskbarDisableWidgets" class="Machine"
+      displayName="$(string.Windows11TaskbarDisableWidgets)"
+      explainText="$(string.Windows11TaskbarDisableWidgets_Help)"
+      key="Software\Policies\Microsoft\Dsh"
+      presentation="$(presentation.Windows11TaskbarDisableWidgets)"
+      valueName="AllowNewsAndInterests">
+      <parentCategory ref="CtRSEWindows11Taskbar" />
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_NOSERVER" />
+      <enabledValue>
+        <decimal value="0" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1" />
+      </disabledValue>
+    </policy>
+
+    <policy name="Windows11TaskbarAlignment" class="User"
+      displayName="$(string.Windows11TaskbarAlignment)"
+      explainText="$(string.Windows11TaskbarAlignment_Help)"
+      presentation="$(presentation.Windows11TaskbarAlignment)"
+      key="Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced">
+      <parentCategory ref="CtRSEWindows11Taskbar" />
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_NOSERVER" />
+      <elements>
+        <enum id="Windows11TaskbarAlignment" valueName="TaskbarAl">
+          <item displayName="$(string.TaskbarAl_Left)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.TaskbarAl_Center)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+
+  </policies>
+</policyDefinitions>

@@ -1,0 +1,35 @@
+<policyDefinitionResources revision="1.0" schemaVersion="1.0">
+  <displayName>
+  </displayName>
+  <description>
+  </description>
+  <resources>
+    <stringTable>
+      <string id="CtRSEWindows11Taskbar">Windows 11 Taskbar</string>
+
+      <string id="Windows11TaskbarDisableWidgets">Disable widgets</string>
+      <string id="Windows11TaskbarDisableWidgets_Help">If enabled it removes the widgets button from
+        the taskbar.</string>
+
+      <string id="Windows11TaskbarAlignment">Taskbar Alignment</string>
+      <string id="Windows11TaskbarAlignment_Help">Specify the taskbar alignment left or center</string>
+
+      <string id="TaskbarAl_Left">Left</string>
+      <string id="TaskbarAl_Center">Center</string>
+
+    </stringTable>
+
+    <presentationTable>
+
+      <presentation id="Windows11TaskbarPinnedAppsEnable" />
+
+      <presentation id="Windows11TaskbarAlignment">
+        <dropdownList refId="Windows11TaskbarAlignment" noSort="true">Alignment</dropdownList>
+      </presentation>
+
+      <presentation id="Windows11TaskbarDisableWidgets" />
+
+    </presentationTable>
+
+  </resources>
+</policyDefinitionResources>

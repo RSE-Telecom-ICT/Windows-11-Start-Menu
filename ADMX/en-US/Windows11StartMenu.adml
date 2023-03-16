@@ -6,53 +6,38 @@
   <resources>
     <stringTable>
       <string id="CtRSEWindows11StartMenu">Windows 11 Start Menu</string>
-	
-  <string id="Windows11StartMenuPinnedApps">Pinned Apps Start Menu</string>
-	<string id="Windows11StartMenuPinnedApps_Help">
-  Export an existing Start layout
 
-  1. Create a folder to save the .json file. For example, create the C:\Layouts folder.
-  2. On a Windows 11 device, open the Windows PowerShell app.
-  3. Run the following cmdlet. Name the file LayoutModification.json.
-  
-  Export-StartLayout -Path "C:\Layouts\LayoutModification.json"
+      <string id="Windows11StartMenuPinnedApps">Pinned Apps Start Menu</string>
+      <string id="Windows11StartMenuPinnedApps_Help">
+        Export an existing Start layout
 
-  For more information see: https://docs.microsoft.com/en-us/windows/configuration/customize-start-menu-layout-windows-11#get-the-pinnedlist-json
+        1. Create a folder to save the .json file. For example, create the C:\Layouts folder.
+        2. On a Windows 11 device, open the Windows PowerShell app.
+        3. Run the following cmdlet. Name the file LayoutModification.json.
 
-  Also enable the "Pinned Apps Start Enabled" setting
-  </string>
+        Export-StartLayout -Path "C:\Layouts\LayoutModification.json"
 
-  <string id="Windows11StartMenuPinnedAppsEnable">Pinned Apps Start Enabled</string>
-	<string id="Windows11StartMenuPinnedAppsEnable_Help"></string>
-	
-  <string id="Windows11StartMenuDisableWidgets">Disable widgets</string>
-	<string id="Windows11StartMenuDisableWidgets_Help">If enabled it removes the widgets button from the taskbar.</string>
+        For more information see:
+        https://docs.microsoft.com/en-us/windows/configuration/customize-start-menu-layout-windows-11#get-the-pinnedlist-json
+        Also enable the "Pinned Apps Start Enabled" setting
+      </string>
 
-	<string id="Windows11StartMenuAlignment">Taskbar Alignment</string>
-	<string id="Windows11StartMenuAlignment_Help">Specify the taskbar alignment left or center</string>
+      <string id="Windows11StartMenuPinnedAppsEnable">Pinned Apps Start Enabled</string>
+      <string id="Windows11StartMenuPinnedAppsEnable_Help"></string>
 
-	<string id="TaskbarAl_Left">Left</string>
-	<string id="TaskbarAl_Center">Center</string>
-	
-	</stringTable>
+    </stringTable>
 
-   <presentationTable>
+    <presentationTable>
 
-	   <presentation id="Windows11StartMenuPinnedApps">
+      <presentation id="Windows11StartMenuPinnedApps">
         <textBox refId="Windows11StartMenuPinnedApps">
           <label>Pinned apps list:</label>
         </textBox>
-	   </presentation>
+      </presentation>
 
-     <presentation id="Windows11StartMenuPinnedAppsEnable"/>
-	
-	<presentation id="Windows11StartMenuAlignment">
-        <dropdownList refId="Windows11StartMenuAlignment" noSort="true">Alignment</dropdownList>
-  </presentation>
+      <presentation id="Windows11StartMenuPinnedAppsEnable" />
 
-  <presentation id="Windows11StartMenuDisableWidgets"/>
+    </presentationTable>
 
-   </presentationTable>
-	
   </resources>
 </policyDefinitionResources>

@@ -1,0 +1,23 @@
+<policyDefinitionResources revision="1.0" schemaVersion="1.0">
+  <displayName>
+  </displayName>
+  <description>
+  </description>
+  <resources>
+    <stringTable>
+      <string id="CtRSEMicrosoftEdge">Microsoft Edge</string>
+
+      <string id="MicrosoftEdgeDisableBingSidebar">Disable Bing Sidebar</string>
+      <string id="MicrosoftEdgeDisableBingSidebar_Help">If enabled it removes the Microsoft Edge
+        Sidebar.</string>
+
+    </stringTable>
+
+    <presentationTable>
+
+      <presentation id="MicrosoftEdgeDisableBingSidebar" />
+
+    </presentationTable>
+
+  </resources>
+</policyDefinitionResources>
