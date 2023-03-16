@@ -23,10 +23,11 @@
   </string>
 
   <string id="Windows11StartMenuPinnedAppsEnable">Pinned Apps Start Enabled</string>
-	<string id="Windows11StartMenuPinnedAppsEnable_Help">
-  
-  </string>
+	<string id="Windows11StartMenuPinnedAppsEnable_Help"></string>
 	
+  <string id="Windows11StartMenuDisableWidgets">Disable widgets</string>
+	<string id="Windows11StartMenuDisableWidgets_Help">If enabled it removes the widgets button from the taskbar.</string>
+
 	<string id="Windows11StartMenuAlignment">Taskbar Alignment</string>
 	<string id="Windows11StartMenuAlignment_Help">Specify the taskbar alignment left or center</string>
 
@@ -48,7 +49,9 @@
 	<presentation id="Windows11StartMenuAlignment">
         <dropdownList refId="Windows11StartMenuAlignment" noSort="true">Alignment</dropdownList>
   </presentation>
-   
+
+  <presentation id="Windows11StartMenuDisableWidgets"/>
+
    </presentationTable>
 	
   </resources>
