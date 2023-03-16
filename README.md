@@ -18,4 +18,3 @@ Computer Configuration -> Administrative Templates -> RSE Telecom & ICT -> Micro
   
 User Configuration -> Administrative Templates -> RSE Telecom & ICT -> Windows 11 Start Menu
  - Taskbar Alignment (here you can set the taskbar alignment to be either centered or to the left)
-
