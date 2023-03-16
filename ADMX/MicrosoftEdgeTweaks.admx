@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  Copyright (C) RSE Telecom & ICT. All rights reserved.  -->
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0"
+  xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <policyNamespaces>
+    <target prefix="RSEMicrosoftEdge" namespace="RseTelecom.MicrosoftEdge" />
+    <using prefix="mycompany" namespace="RseTelecom.Policies.Common" />
+    <using prefix="windows" namespace="Microsoft.Policies.Windows" />
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0" />
+  <categories>
+    <category name="CtRSEMicrosoftEdge" displayName="$(string.CtRSEMicrosoftEdge)">
+      <parentCategory ref="mycompany:CtRseTelecom" />
+    </category>
+  </categories>
+  <policies>
+
+    <policy name="MicrosoftEdgeDisableBingSidebar" class="Machine"
+      displayName="$(string.MicrosoftEdgeDisableBingSidebar)"
+      explainText="$(string.MicrosoftEdgeDisableBingSidebar_Help)"
+      key="Software\Policies\Microsoft\Edge"
+      presentation="$(presentation.MicrosoftEdgeDisableBingSidebar)" valueName="HubsSidebarEnabled">
+      <parentCategory ref="CtRSEMicrosoftEdge" />
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_NOSERVER" />
+      <enabledValue>
+        <decimal value="0" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1" />
+      </disabledValue>
+    </policy>
+
+
+  </policies>
+</policyDefinitions>

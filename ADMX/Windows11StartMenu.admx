@@ -1,67 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--  Copyright (C) Riccardo Bicelli <r.bicelli@gmail.com>. All rights reserved.  -->
-<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
- <policyNamespaces>
+<!--  Copyright (C) RSE Telecom & ICT. All rights reserved.  -->
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0"
+  xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <policyNamespaces>
     <target prefix="RSEWindows11StartMenu" namespace="RseTelecom.Windows11StartMenu" />
     <using prefix="mycompany" namespace="RseTelecom.Policies.Common" />
-	<using prefix="windows" namespace="Microsoft.Policies.Windows" />
- </policyNamespaces>
- <resources minRequiredRevision="1.0" />
+    <using prefix="windows" namespace="Microsoft.Policies.Windows" />
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0" />
   <categories>
     <category name="CtRSEWindows11StartMenu" displayName="$(string.CtRSEWindows11StartMenu)">
-	<parentCategory ref="mycompany:CtRseTelecom" />
-	</category>
+      <parentCategory ref="mycompany:CtRseTelecom" />
+    </category>
   </categories>
   <policies>
 
-   <policy name="Windows11StartMenuPinnedApps" class="Machine" displayName="$(string.Windows11StartMenuPinnedApps)" explainText="$(string.Windows11StartMenuPinnedApps_Help)" key="Software\Microsoft\PolicyManager\current\device\Start" presentation="$(presentation.Windows11StartMenuPinnedApps)">
-      <parentCategory ref="CtRSEWindows11StartMenu"/>
-      <supportedOn ref="windows:SUPPORTED_Windows_11_0_NOSERVER"/>
-      <elements>
-        <text id="Windows11StartMenuPinnedApps" valueName="ConfigureStartPins" required="true"/>
-      </elements>
-    </policy>
-
-    <policy name="Windows11StartMenuPinnedAppsEnable" class="Machine" displayName="$(string.Windows11StartMenuPinnedAppsEnable)" explainText="$(string.Windows11StartMenuPinnedAppsEnable_Help)" key="Software\Microsoft\PolicyManager\current\device\Start"  presentation="$(presentation.Windows11StartMenuPinnedAppsEnable)" valueName="ConfigureStartPins_ProviderSet">
-      <parentCategory ref="CtRSEWindows11StartMenu"/>
-      <supportedOn ref="windows:SUPPORTED_Windows_11_0_NOSERVER"/>
-      <enabledValue>
-        <decimal value="0"/>
-      </enabledValue>
-      <disabledValue>
-        <decimal value="1"/>
-      </disabledValue>
-    </policy>
-
-    <policy name="Windows11StartMenuDisableWidgets" class="Machine" displayName="$(string.Windows11StartMenuDisableWidgets)" explainText="$(string.Windows11StartMenuDisableWidgets_Help)" key="Software\Policies\Microsoft\Dsh"  presentation="$(presentation.Windows11StartMenuDisableWidgets)" valueName="AllowNewsAndInterests">
-      <parentCategory ref="CtRSEWindows11StartMenu"/>
-      <supportedOn ref="windows:SUPPORTED_Windows_11_0_NOSERVER"/>
-      <enabledValue>
-        <decimal value="0"/>
-      </enabledValue>
-      <disabledValue>
-        <decimal value="1"/>
-      </disabledValue>
-    </policy>
-	
-	 <policy name="Windows11StartMenuAlignment" class="User" displayName="$(string.Windows11StartMenuAlignment)" explainText="$(string.Windows11StartMenuAlignment_Help)" presentation="$(presentation.Windows11StartMenuAlignment)" key="Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced">
+    <policy name="Windows11StartMenuPinnedApps" class="Machine"
+      displayName="$(string.Windows11StartMenuPinnedApps)"
+      explainText="$(string.Windows11StartMenuPinnedApps_Help)"
+      key="Software\Microsoft\PolicyManager\current\device\Start"
+      presentation="$(presentation.Windows11StartMenuPinnedApps)">
       <parentCategory ref="CtRSEWindows11StartMenu" />
       <supportedOn ref="windows:SUPPORTED_Windows_11_0_NOSERVER" />
       <elements>
-        <enum id="Windows11StartMenuAlignment" valueName="TaskbarAl">
-          <item displayName="$(string.TaskbarAl_Left)">
-            <value>
-              <decimal value="0" />
-            </value>
-          </item>
-          <item displayName="$(string.TaskbarAl_Center)">
-            <value>
-              <decimal value="1" />
-            </value>
-          </item>
-        </enum>
+        <text id="Windows11StartMenuPinnedApps" valueName="ConfigureStartPins" required="true" />
       </elements>
     </policy>
-	
+
+    <policy name="Windows11StartMenuPinnedAppsEnable" class="Machine"
+      displayName="$(string.Windows11StartMenuPinnedAppsEnable)"
+      explainText="$(string.Windows11StartMenuPinnedAppsEnable_Help)"
+      key="Software\Microsoft\PolicyManager\current\device\Start"
+      presentation="$(presentation.Windows11StartMenuPinnedAppsEnable)"
+      valueName="ConfigureStartPins_ProviderSet">
+      <parentCategory ref="CtRSEWindows11StartMenu" />
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_NOSERVER" />
+      <enabledValue>
+        <decimal value="0" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1" />
+      </disabledValue>
+    </policy>
+
   </policies>
 </policyDefinitions>
